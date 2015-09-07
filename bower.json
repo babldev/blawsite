@@ -1,0 +1,14 @@
+{
+  "name": "blawsite",
+  "version": "0.0.0",
+  "authors": [
+    "Brady Law <bradyl16@gmail.com>"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "three.js": "~0.71.0"
+  }
+}
