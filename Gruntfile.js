@@ -15,6 +15,17 @@ module.exports = function(grunt) {
       },
       options: {}
     },
+    sass: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'src/style',
+          dest: 'dist/style',
+          src: ['*.scss'],
+          ext: '.css'
+        }]
+      }
+    },
     watch: {
       files: ['<%= jshint.files %>'],
       tasks: ['jshint']
@@ -24,7 +35,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-wiredep');
+  grunt.loadNpmTasks('grunt-contrib-sass');
 
-  grunt.registerTask('default', ['jshint', 'wiredep']);
+  grunt.registerTask('default', ['jshint', 'wiredep', 'sass']);
 
 };
