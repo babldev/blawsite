@@ -11,7 +11,7 @@ module.exports = function(grunt) {
     },
     wiredep: {
       task: {
-        src: ['index.html']
+        src: ['index.html', '404.html']
       },
       options: {}
     },
