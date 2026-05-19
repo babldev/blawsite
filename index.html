@@ -1,49 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Brady Law - Software Engineer in San Francisco. Previously at Lyft and Apple.">
 
   <title>Brady Law</title>
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" type="text/css" href="bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="dist/style/main.css">
-
 </head>
+
 <body>
-  <!-- bower:js -->
-  <script src="bower_components/three.js/three.min.js"></script>
-  <!-- endbower -->
+  <!-- Neural Network Background -->
   <script src="src/js/main.js"></script>
 
-  <div class="container">
+  <div class="container main-container">
     <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="glass-card text-center">
+          <h1>Brady Law</h1>
+          <p class="subtitle">
+            Software Engineer, previously at
+            <a href="https://lyft.com" target="_blank" rel="noopener noreferrer">Lyft</a> &amp;
+            <a href="https://www.apple.com" target="_blank" rel="noopener noreferrer">Apple</a>
+          </p>
 
-      <div class="col-md-8">
-        <h1>Brady Law</h1>
-        <p>
-          Software Engineer @ <a href="https://lyft.com">Lyft</a><br>
-          San Francisco, CA, USA, Earth
-        </p>
-        <a class="btn btn-default" href="https://www.linkedin.com/pub/brady-law/11/777/ab8">
-          <span class="glyphicon glyphicon-briefcase"></span>
-          LinkedIn
-        </a>
-        <a class="btn btn-default" href="https://github.com/babldev">
-          <span class="glyphicon glyphicon-console"></span>
-          GitHub
-        </a>
+          <p class="location">San Francisco, CA</p>
+
+          <div class="button-group">
+            <a class="btn btn-custom" href="https://www.linkedin.com/pub/brady-law/11/777/ab8" target="_blank"
+              rel="noopener noreferrer">
+              <!-- Inline custom SVG for LinkedIn -->
+              <svg class="svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor"
+                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+              LinkedIn
+            </a>
+            <a class="btn btn-custom" href="https://github.com/babldev" target="_blank" rel="noopener noreferrer">
+              <!-- Inline custom SVG for GitHub -->
+              <svg class="svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor"
+                stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              GitHub
+            </a>
+          </div>
+        </div>
       </div>
-
-      <div class="col-md-4">
-        <!-- <h3>Controls</h3> -->
-      </div>
-
     </div>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
+
 </html>

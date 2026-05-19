@@ -4,8 +4,14 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Page not found - Brady Law">
 
   <title>404 - Brady Law</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="dist/style/main.css">
@@ -21,15 +27,29 @@
   </script>
 </head>
 <body>
-  <!-- bower:js -->
-  <script src="bower_components/three.js/three.min.js"></script>
-  <!-- endbower -->
+  <!-- Neural Network Background -->
   <script src="src/js/main.js"></script>
 
-  <div class="container">
+  <div class="container main-container">
     <div class="row">
-      <div class="col-md-12">
-        <h1>404</h1>
+      <div class="col-md-8 col-md-offset-2">
+        <div class="glass-card text-center">
+          <h1>404</h1>
+          <p class="subtitle">Page Not Found</p>
+          
+          <p class="location">The page you requested does not exist.</p>
+
+          <div class="button-group">
+            <a class="btn btn-custom" href="/">
+              <!-- Inline custom SVG for Home -->
+              <svg class="svg-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              Back Home
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

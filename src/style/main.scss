@@ -1,19 +1,249 @@
+@use "sass:color";
+
+// Design Tokens — Cool Academic Teal Theme
+$bg-color: #F8FAFB; // Cool off-white
+$color-accent: #0F766E; // Deep teal
+$color-hover: #134E4A; // Darker teal
+$text-primary: #1E293B; // Slate charcoal
+$text-muted: #64748B; // Soft slate
+$card-bg: rgba(255, 255, 255, 0.92); // Slightly more opaque glass
+$card-border: rgba(15, 23, 42, 0.10);
+
+// 2-Font Typographic Stack
+$font-serif: 'Lora', 'Georgia', serif;
+$font-mono: 'Space Mono', 'Courier New', monospace;
+
+// Resets
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+p,
+span,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+select,
+textarea {
+  font-family: $font-serif !important;
+}
+
 body {
   margin: 0;
-  color: white;
-  background-color: #000;
+  padding: 0;
+  min-height: 100vh;
+  color: $text-primary;
+  background-color: $bg-color;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
+
 a {
-  color: #ea0b8c;
+  color: $color-accent;
+  font-family: $font-serif !important;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px dotted transparent;
+
+  &:hover,
+  &:focus {
+    color: $color-hover;
+    border-bottom: 1px solid $color-hover;
+    text-decoration: none;
+  }
 }
-a:hover {
-  color: #c30975;
-}
+
+// Background Canvas
 canvas {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -100;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+// Layout Container
+.main-container {
+  padding: 20px;
+  width: 100%;
+  max-width: 580px;
+  z-index: 10;
+}
+
+// Glass Card — slightly more prominent
+.glass-card {
+  position: relative;
+  background: $card-bg;
+  border: 1px solid $card-border;
+  border-radius: 14px;
+  padding: 40px 36px;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow:
+    0 25px 60px rgba(15, 23, 42, 0.06),
+    0 8px 24px rgba(15, 23, 42, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  &:hover {
+    border-color: rgba(15, 118, 110, 0.18);
+    box-shadow:
+      0 35px 75px rgba(15, 23, 42, 0.08),
+      0 10px 30px rgba(15, 23, 42, 0.04);
+  }
+
+  &.text-center {
+    text-align: center;
+  }
+}
+
+// ── Typography: 3 styles only ──
+// Style 1: Name heading — Lora medium
+h1 {
+  font-family: $font-serif !important;
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+  color: $text-primary;
+  line-height: 1.2;
+}
+
+// Style 2: Body text — Lora regular (subtitle + location, same style)
+.subtitle {
+  font-family: $font-serif !important;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: $text-muted;
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.location {
+  font-family: $font-serif !important;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: $text-muted;
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+
+// Style 3: Buttons — Space Mono uppercase
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: $font-mono !important;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: $text-primary;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.10);
+  border-radius: 6px;
+  padding: 11px 22px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.02);
+  min-width: 140px;
+
+  .svg-icon {
+    stroke: $text-muted;
+  }
+
+  &:hover,
+  &:focus {
+    color: #ffffff !important;
+    background: $color-accent;
+    border-color: $color-accent;
+    box-shadow: 0 5px 15px rgba(15, 118, 110, 0.18);
+    text-decoration: none;
+
+    .svg-icon {
+      stroke: #ffffff;
+      transform: scale(1.05);
+    }
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+// 404 Button Hover
+.text-center .btn-custom[href="/"] {
+
+  &:hover,
+  &:focus {
+    background: $color-hover;
+    border-color: $color-hover;
+    box-shadow: 0 5px 15px rgba(19, 78, 74, 0.18);
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+    padding-top: 60px;
+  }
+
+  .main-container {
+    padding: 16px;
+  }
+
+  .glass-card {
+    padding: 28px 20px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+
+    .btn-custom {
+      width: 100%;
+      min-width: unset;
+    }
+  }
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-color;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba($color-accent, 0.18);
+  border-radius: 3px;
+
+  &:hover {
+    background: rgba($color-accent, 0.35);
+  }
 }
